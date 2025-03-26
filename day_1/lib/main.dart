@@ -1,5 +1,6 @@
 import 'package:day_1/consts.dart';
 import 'package:day_1/widgets/dates.dart';
+import 'package:day_1/widgets/ticket.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(8),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //The row acting as the app bar
             Row(
@@ -68,9 +70,10 @@ class HomePage extends StatelessWidget {
             Row(
               children: days.map((day) => DateWidget(day: day)).toList(),
             ),
+            const SizedBox(height: 20,),
             Text("Starts in 2h 32m", style: TextStyle(fontWeight: FontWeight.bold),),
-
-            
+            const SizedBox(height: 20,),
+            Center(child: TicketWidget()),
           ],
         ),
       ),
